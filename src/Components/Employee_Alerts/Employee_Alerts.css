@@ -1,0 +1,26 @@
+.Employee_Notifications_Container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.Employee_Notifications_Message{
+    width: 107%;
+    background-color: white;
+    padding: 20px;
+    height: 250px;
+    border-radius: 7px;
+}
+.Employee_Notifications_Message h3, .Employee_Notifications_Message h2, .Employee_Notifications_Event h3, .Employee_Notifications_Event h3{
+    font-weight: 500;
+    margin-top: 20px;
+}
+.Employee_Notifications_Event{
+    width: 84%;
+    background-color: white;
+    padding: 4px;
+    height: 250px;
+    margin: auto;
+    border-radius: 7px;
+}

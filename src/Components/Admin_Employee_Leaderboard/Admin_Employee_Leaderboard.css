@@ -1,0 +1,37 @@
+.Admin_Employee_Leaderboard_Container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 15px;
+    margin-top: 10px;
+}
+.admin_employee_leaderboard_person{
+    background-color: #fff;
+    box-shadow: 1px 2px 1px 2px whitesmoke;
+    text-align: center;
+    height: 200px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+}
+.admin_employee_leaderboard_person img{
+    width: 30%;
+    height: 125px;
+    margin-top: 10%;
+}
+.admin_employee_leaderboard_person .leaderboard_person_details{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.admin_employee_leaderboard_person .leaderboard_person_details span{
+    display: flex;
+    
+}
+.admin_employee_leaderboard_person .leaderboard_person_details span h3{
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 500;
+}

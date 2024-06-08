@@ -1,0 +1,50 @@
+.topBarContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    padding-left: 5px;
+    
+}
+.topBarWriting h5{
+    display: flex;
+    margin-right: 5px;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.topBarWriting h5 h4{
+    margin-left: 7px;
+    font-size: 25px;
+}
+.topBarControls{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    
+}
+.topBarPerson{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topBarSearch input{
+    height: 40px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    color:black;
+    padding: 2px;
+    font-size: 19px;
+    font-family: serif;
+
+}
+.topBarPerson svg, .topBarControls svg{
+    height: 40px;
+    width: 20px;
+    margin-right: 15px;
+    
+}

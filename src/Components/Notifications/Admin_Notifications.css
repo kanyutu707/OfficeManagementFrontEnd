@@ -1,0 +1,23 @@
+.Admin_Notifications_Container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.Admin_Notifications_Message{
+    width: 57%;
+    background-color: white;
+    padding: 20px;
+    height: 250px;
+    border-radius: 7px;
+}
+.Admin_Notifications_Message h3, .Admin_Notifications_Message h2, .Admin_Notifications_Event h3, .Admin_Notifications_Event h3{
+    font-weight: 500;
+    margin-top: 20px;
+}
+.Admin_Notifications_Event{
+    width: 42%;
+    background-color: white;
+    padding: 4px;
+    height: 250px;
+    border-radius: 7px;
+}

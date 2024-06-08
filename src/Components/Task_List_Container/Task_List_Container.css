@@ -1,0 +1,67 @@
+.Task_List_Container{
+    width: calc(100% - 500px);
+    height: 100%;
+    overflow-y: scroll;
+}
+.Task_List_Container section{
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+}
+.Task_List_Container header{
+    font-size: 25px;
+    padding: 10px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Task_List_Container section span{
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.Task_List_Container section span h3{
+    margin-top: 10px;
+}
+
+.Task_List_Container section span h4{
+    margin-top: 12px;
+    font-weight: 300;
+}
+.Task_List_Container section span div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.Task_List_Container section span div h3{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  
+}
+
+.Task_List_Container section span div h3 h4{
+    margin-top: 2px;
+
+}
+.Task_List_Container section span h1{
+    display: flex;
+    justify-content: space-between;
+}
+.Task_List_Container section span h1 h1{
+    text-decoration: underline;
+}
+.Task_List_Container section span h1 button{
+    background-color: black;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 30px;
+    border-radius: 2px;
+    font-size: 17px;
+    margin-right: 5px;
+    cursor: pointer;
+}

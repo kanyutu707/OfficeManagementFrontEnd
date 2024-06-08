@@ -1,0 +1,7 @@
+.admin_dashboard_container{
+    display: flex;
+    justify-content: space-between;
+}
+.admin_dashboard_right_side{
+    width: calc(100% - 220px);
+}

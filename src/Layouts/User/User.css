@@ -1,0 +1,16 @@
+.Employee_Container{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.Employee_right_Side{
+    width: calc(100% - 220px);
+}
+.Employee_content{
+    height: 94vh;
+    overflow-y: scroll;
+    padding: 4px;
+    margin-bottom: 10px;
+}

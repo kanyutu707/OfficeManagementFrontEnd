@@ -1,0 +1,19 @@
+.employee_navigator{
+    display: flex;
+    justify-content: space-between;
+    padding:50px 25px 0px 20px;
+
+}
+.employee_navigator a{
+    background-color: black;
+    color: white;
+    width: 49%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}

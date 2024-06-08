@@ -1,0 +1,6 @@
+.ChatsContainer{
+    width: 100%;
+}
+.ChatsContentContainer{
+    height: calc(100%-70px);
+}

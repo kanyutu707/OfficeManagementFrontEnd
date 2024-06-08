@@ -1,0 +1,20 @@
+.Employee_Productivity_Container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.Employee_Productivity_Container .Employee_Productivity_Employee{
+    width: 44%;
+    background-color: white;
+    padding: 10px;
+
+}
+
+.Employee_Productivity_Container .Employee_Productivity_Productivity{
+    width: 55%;
+    background-color: white;
+}
+.keyMap{
+    display: flex;
+    justify-content: space-between;
+}

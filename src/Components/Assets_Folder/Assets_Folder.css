@@ -1,0 +1,19 @@
+.Assets_View_Controller_Container{
+    display: flex;
+    justify-content: space-between;
+    padding:50px 25px 0px 20px;
+
+}
+.Assets_View_Controller_Container a{
+    background-color: black;
+    color: white;
+    width: 49%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}

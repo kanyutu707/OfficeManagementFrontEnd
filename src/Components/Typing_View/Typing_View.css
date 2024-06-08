@@ -1,0 +1,33 @@
+.Typing_View_Container{
+    width: calc(100% - 270px);
+    background-color: white;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 7px;
+}
+.Typing_View_Container .Messages_View{
+    height: calc(100% - 40px);
+}
+.Typing_View_Container .typing_section{
+    height: 40px;
+    padding: 0 2px 0 2px;
+}
+.Typing_View_Container .typing_section input{
+    width: calc(100% - 90px);
+    height: 100%;
+}
+.Typing_View_Container .typing_section button{
+    width: 40px;
+    background-color: black;
+    border: none;
+    height: 100%;
+    margin-left: 2px;
+
+}
+.Typing_View_Container .typing_section button svg{
+    width: 100%;
+    color: white;
+    
+}
+

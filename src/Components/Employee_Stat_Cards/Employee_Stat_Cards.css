@@ -1,0 +1,20 @@
+.EmployeeTopDashCards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap:10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.EmployeeTopDashCard{
+    height: 80px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+}
+.custom_icon{
+    height: 40px;
+    width: 35px;
+
+}

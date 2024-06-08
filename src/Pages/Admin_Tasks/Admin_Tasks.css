@@ -1,0 +1,6 @@
+.Admin_Tasks_Container{
+    display: flex;
+    height: calc(100vh - 70px);
+    overflow-y: hidden;
+    width: 100%;
+}

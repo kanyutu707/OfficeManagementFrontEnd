@@ -1,0 +1,16 @@
+.admin_container{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.admin_right_side{
+    width: calc(100% - 220px);
+}
+.admin_content{
+   height: 94vh;
+    overflow-y: scroll;
+    padding: 4px;
+    margin-bottom: 10px;
+}

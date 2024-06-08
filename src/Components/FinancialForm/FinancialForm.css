@@ -1,0 +1,59 @@
+.financialFormContainer{
+    background-color: white;
+    height: 645px;
+    border: 1px solid black;
+    box-shadow: 1px 2px 1px 2px whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 550px;
+    padding: 10px;
+}
+.financialFormContainer.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+}
+.financialFormContainer .content .form_group{
+    display: flex;
+    flex-direction: column;
+
+}
+.financialFormContainer button{
+
+    border: none;
+    padding: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    align-self: flex-end;
+    background-color: white;
+}
+.financialFormContainer button svg{
+    background-color: white;
+    width: 35px;
+    height: 35px;
+}
+.financialFormContainer .content .form_group input{
+    height: 55px;
+}
+.financialFormContainer .content .form_group label{
+    margin-top: 30px;
+    margin-bottom:14px;
+}
+
+.financialFormContainer .content #submitButton{
+    background-color: black;
+    margin: auto;
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    justify-content: center;
+    border-radius: 5px;
+}
