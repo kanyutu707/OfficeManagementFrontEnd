@@ -13,51 +13,35 @@ import Admin_Tasks from '../../Pages/Admin_Tasks/Admin_Tasks'
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 const Admin = () => {
-     const navigate=useNavigate()
-  const [tokenPresent, setTokenPresent] = useState(false);
-  const [userRole, setUserRole]=useState('');
-
-  useEffect(() => {
-    const token=sessionStorage.getItem('token');
-    const role=sessionStorage.getItem('role');
-
-    if(token){
-      setTokenPresent(true);
-    }
-
-    if(role){
-      setUserRole(role);
-    }
-  }, [])
   return (
       <>
-           
-          
-               <>
+      
+        {sessionStorage.getItem('role')==='Admin'?(
+            <div className='admin_container'>
+            <Admin_Sidebar/>
+            <section className="admin_right_side">
+              <Topbar/>
+              <div className="admin_content">
+              <Routes>
+                
+                  <Route index element={<Admin_Dashboard/>}/>
+                  <Route path='/chats/*' element={<Chats/>}/>
+                  <Route path='/Employee/*' element={<Admin_Employee_View/>}/>
+                  <Route path='/Financials/*' element={<Finances/>}/>
+                  <Route path='/Events' element={<EventsEmployer/>}/>
+                  <Route path='/Account' element={<Account/>}/>
+                  <Route path='/Tasks' element={<Admin_Tasks/>}></Route>
+              </Routes>
+              </div>
+              </section>
+          </div>
 
-    <div className='admin_container'>
-      <Admin_Sidebar/>
-      <section className="admin_right_side">
-        <Topbar/>
-        <div className="admin_content">
-        <Routes>
-          
-            <Route index element={<Admin_Dashboard/>}/>
-            <Route path='/chats/*' element={<Chats/>}/>
-            <Route path='/Employee/*' element={<Admin_Employee_View/>}/>
-            <Route path='/Financials/*' element={<Finances/>}/>
-            <Route path='/Events' element={<EventsEmployer/>}/>
-            <Route path='/Account' element={<Account/>}/>
-            <Route path='/Tasks' element={<Admin_Tasks/>}></Route>
-        </Routes>
-        </div>
-        </section>
-    </div>
-       </>
-            
-              
-        </>    
-  
+        ): window.location.href='/'}
+      
+      </>
+
+    
+    
   )
 }
 

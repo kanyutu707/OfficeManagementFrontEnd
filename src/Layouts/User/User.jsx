@@ -11,47 +11,35 @@ import Employee_Events from '../../Pages/Employee_Events/Employee_Events'
 import Employee_Chat from '../../Pages/Employee_Chat/Employee_Chat'
 import Employee_TopBar from '../../Components/Employee_TopBar/Employee_TopBar'
 const User = () => {
-   const navigate=useNavigate()
-  const [tokenPresent, setTokenPresent] = useState(false);
-  const [userRole, setUserRole]=useState('');
-
-    useEffect(() => {
-    const token=sessionStorage.getItem('token');
-    const role=sessionStorage.getItem('role');
-
-    if(token){
-      setTokenPresent(true);
-    }
-
-    if(role){
-      setUserRole(role);
-    }
-  }, [])
-
+  
   return (
-       <>
- 
-    <div className='Employee_Container'>
       
-      <Employee_SIdebar/>
-      <section className="Employee_right_Side">
-        <Employee_TopBar/>
-        <div className="Employee_content">
-        <Routes>
-          <Route index element={<Employee_Dashboard/>}/>
-          <Route path='/chats/*' element={<Chats/>}/>
-          <Route path='/Account' element={<Account/>}/>
-          <Route path='/Tasks/*' element={<Employee_Tasks/>}/>
-          <Route path='/Events' element={<Employee_Events/>}/>
-          <Route path='/Employee/chats' element={<Employee_Chat/>}/>
-
-        </Routes>
-        </div>
-      </section>
-    </div>
-    
-
+    <>
+      {sessionStorage.getItem('role')==='Employee'?(
+        <div className='Employee_Container'>
+      
+        <Employee_SIdebar/>
+        <section className="Employee_right_Side">
+          <Employee_TopBar/>
+          <div className="Employee_content">
+          <Routes>
+            <Route index element={<Employee_Dashboard/>}/>
+            <Route path='/chats/*' element={<Chats/>}/>
+            <Route path='/Account' element={<Account/>}/>
+            <Route path='/Tasks/*' element={<Employee_Tasks/>}/>
+            <Route path='/Events' element={<Employee_Events/>}/>
+            <Route path='/Employee/chats' element={<Employee_Chat/>}/>
+  
+          </Routes>
+          </div>
+        </section>
+      </div>
+      ):
+      window.location.href='/'
+      }
     </>
+    
+    
   )
 }
 
