@@ -3,19 +3,21 @@ import './Task_Form_Add.css';
 
 const Task_Form_Add = () => {
     const [employees, setEmployees] = useState([]);
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const [formData, setFormData] = useState({
         title: "",
         description: "",
         assigned_to: "",
         created:new Date().toISOString().slice(0, 19).replace('T', ' '),
         deadline: "",
-        company_id:parseInt(sessionStorage.getItem("companyId"))
+        company_id:parseInt(sessionStorage.getItem("companyId")),
+        createdby:parseInt(sessionStorage.getItem('loggedIn'))
     });
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:3000/user/get_all", {
+                const response = await fetch(`${BASE_URL}/user/get_all`, {
                     headers: {
                         'Authorization': sessionStorage.getItem('token'),
                         'Content-Type': 'application/json'
@@ -26,7 +28,7 @@ const Task_Form_Add = () => {
                 }
                 const data = await response.json();
                 const companyId = parseInt(sessionStorage.getItem('companyId'));
-                const filteredEmployees = data.filter(singleEmployee => singleEmployee.company_id === companyId);
+                const filteredEmployees = data.filter(singleEmployee => (singleEmployee.company_id === companyId && singleEmployee.email!==sessionStorage.getItem('email')));
                 setEmployees(filteredEmployees.reverse());
             } catch (error) {
                 console.error("Error fetching employees: ", error);
@@ -42,7 +44,7 @@ const Task_Form_Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8080/smartEmployer/tasks/create", {
+            const response = await fetch(`${BASE_URL}/task`, {
                 method: 'POST',
                 headers: {
                     'Authorization': sessionStorage.getItem('token'),
@@ -57,7 +59,7 @@ const Task_Form_Add = () => {
             const data = await response.json();
             console.log(data);
             alert("Data submitted successfully");
-            // Optionally update state or redirect to another page
+            window.location.href=window.location.href;
         } catch (error) {
             console.error("Error adding task: ", error);
             alert("Failed to add task. Please try again.");

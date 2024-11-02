@@ -32,7 +32,7 @@ const Admin = () => {
   return (
       <>
            
-            {tokenPresent && userRole==='Admin'?(
+          
                <>
 
     <div className='admin_container'>
@@ -54,11 +54,7 @@ const Admin = () => {
         </section>
     </div>
        </>
-              ):(
-            navigate('/SignIn/')
-            )
-
-          }
+            
               
         </>    
   

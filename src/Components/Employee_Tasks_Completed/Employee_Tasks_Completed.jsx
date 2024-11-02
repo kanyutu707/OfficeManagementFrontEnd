@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import './Employee_Tasks_Completed.css'
 
 const Employee_Tasks_Completed = () => {
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await fetch("http://localhost:8080/smartEmployer/tasks", {
+              const response = await fetch(`${BASE_URL}/task`, {
                   headers: {
                       'Authorization': `${sessionStorage.getItem('token')}`,
                       'Content-Type': 'application/json'

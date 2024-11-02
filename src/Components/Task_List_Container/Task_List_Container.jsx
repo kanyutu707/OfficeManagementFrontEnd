@@ -5,11 +5,12 @@ import { RiRoadMapLine } from "react-icons/ri";
 
 
 const Task_List_Container = () => {
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:80800/smartEmployer/tasks/get_all", {
+                const response = await fetch(`${BASE_URL}/task`, {
                     headers: {
                         'Authorization': `${sessionStorage.getItem('token')}`,
                         'Content-Type': 'application/json'
@@ -19,7 +20,9 @@ const Task_List_Container = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                setTasks(data.reverse());
+                const userId=parseInt(sessionStorage.getItem('loggedIn'));
+                const filtereddata=data.filter(singledata=>(singledata.assigned_to===userId || singledata.createdby===userId));
+                setTasks(filtereddata.reverse());
             } catch (error) {
                 console.error("There was a problem fetching the data:", error);
             }

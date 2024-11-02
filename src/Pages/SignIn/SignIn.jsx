@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const SignIn = () => {
-  const [user, setUser]=useState([])
+  const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
   const navigate=useNavigate()
   const [formData, setFormData]=useState({
     "email":"",
@@ -17,7 +17,7 @@ const SignIn = () => {
   const handleSubmit=async(e)=>{
     e.preventDefault();
     try{
-      const response=await fetch("http://localhost:8080/authenticate/login", {
+      const response=await fetch(`${BASE_URL}/user/login`, {
         method:'POST',
         headers:{
           'Content-Type':'application/json'
@@ -30,9 +30,10 @@ const SignIn = () => {
         throw new Error('Network response was not ok')
       }
       const data=await response.json();
-      const jwtToken =data.token
+      console.log(data)
+      const jwtToken =data.accessToken
       const parts = jwtToken.split('.');
-
+      console.log(data);
   
         const payload = JSON.parse(atob(parts[1]));
           console.log(payload);
@@ -42,6 +43,7 @@ const SignIn = () => {
         sessionStorage.setItem('role', payload.user.position)
         sessionStorage.setItem('userId', payload.user.id);
         sessionStorage.setItem('companyId', payload.user.company_id);
+        sessionStorage.setItem('loggedIn', payload.user.id);
         if(payload.user.position==='Admin'){
           navigate('/Admin/');
         }else if(payload.user.position==='Employee'){

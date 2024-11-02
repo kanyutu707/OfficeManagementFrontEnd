@@ -4,10 +4,11 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 
 
 const FinancialForm = ({ close }) => {
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const[formData, setFormData]=useState({
         "source":"",
         "description":"",
-        "amount":"",
+        "amount":0,
         "type":true,
         "company_id":parseInt(sessionStorage.getItem("companyId"))
     })
@@ -17,11 +18,11 @@ const FinancialForm = ({ close }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8080/smartEmployer/financials/create", {
+            const response = await fetch(`${BASE_URL}/finance`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                    'Authorization': `${sessionStorage.getItem('token')}`
                 },
                 credentials: 'include',
                 body: JSON.stringify(formData),

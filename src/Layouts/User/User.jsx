@@ -30,7 +30,7 @@ const User = () => {
 
   return (
        <>
-    {tokenPresent && userRole==='Employee'?(
+ 
     <div className='Employee_Container'>
       
       <Employee_SIdebar/>
@@ -49,10 +49,7 @@ const User = () => {
         </div>
       </section>
     </div>
-     ):(
-        navigate('/SignIn/')
-      )
-  }
+    
 
     </>
   )

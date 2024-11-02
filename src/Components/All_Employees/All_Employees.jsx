@@ -6,13 +6,14 @@ import Popup from 'reactjs-popup'
 import AddEmployee from '../AddEmployee/AddEmployee';
 
 const All_Employees = () => {
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const [isOpen, setIsOpen] = useState(false);
     const [employees, setEmployees]=useState([]);
 
     useEffect(() => {
         const fetchData=async()=>{
            try{
-            const response=await fetch("http://localhost:8080/smartEmployer/user/get_all", {
+            const response=await fetch(`${BASE_URL}/user/get_all`, {
                 headers:{
                     'Authorization':`${sessionStorage.getItem('token')}`,
                     'Content-Type':'application/json'
@@ -24,7 +25,7 @@ const All_Employees = () => {
                 const data=await response.json();
                 console.log(data)
                const companyId = parseInt(sessionStorage.getItem('companyId')); // Parse companyId to integer
-            const filteredEmployees = data.filter(singleEmployee => singleEmployee.company_id === companyId);
+            const filteredEmployees = data.filter(singleEmployee => (singleEmployee.company_id === companyId && singleEmployee.position!=="Admin"));
             setEmployees(filteredEmployees.reverse());
                 
             }catch(error){

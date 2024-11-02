@@ -3,6 +3,7 @@ import "./EventsEmployerForm.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const EventsEmployerForm = () => {
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const [formData, setFormData] = useState({
         "title": "",
         "description": "",
@@ -17,7 +18,7 @@ const EventsEmployerForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8080/smartEmployer/events/", {
+            const response = await fetch(`${BASE_URL}/events/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

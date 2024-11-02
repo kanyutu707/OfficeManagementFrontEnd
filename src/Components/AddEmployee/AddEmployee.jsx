@@ -4,6 +4,7 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import './AddEmployee.css'
 
 const AddEmployee = ({close}) => {
+  const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const [formData, setFormData] = useState({
         "firstName":"",
         "lastName":"",
@@ -20,7 +21,7 @@ const AddEmployee = ({close}) => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await fetch("http://localhost:8080/authenticate/register", {
+          const response = await fetch(`${BASE_URL}/user/register`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

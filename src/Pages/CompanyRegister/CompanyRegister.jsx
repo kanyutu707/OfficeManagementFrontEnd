@@ -3,6 +3,7 @@ import './CompanyRegister.css'
 import { useNavigate } from 'react-router-dom'
 
 const CompanyRegister = () => {
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
   const navigate=useNavigate()
   const [formData, setFormData] = useState({
     "name": "",
@@ -14,7 +15,7 @@ const handleChange = (e) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch("http://localhost:8080/authenticate/smartEmployer/company/create", {
+        const response = await fetch(`${BASE_URL}/company/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

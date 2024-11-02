@@ -3,12 +3,13 @@ import './EventsListEmployer.css'
 import useSWR from 'swr'
 
 const EventsListEmployer = () => {
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:8080/smartEmployer/events/", {
+                const response = await fetch(`${BASE_URL}/events/`, {
                     headers: {
                         'Authorization': `${sessionStorage.getItem('token')}`,
                         'Content-Type': 'application/json'

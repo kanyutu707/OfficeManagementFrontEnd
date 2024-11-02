@@ -3,11 +3,12 @@ import './Employee_Tasks_Pending.css'
 
 
 const Employee_Tasks_Pending = () => {
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await fetch("http://localhost:8080/smartEmployer/tasks", {
+              const response = await fetch(`${BASE_URL}/task`, {
                   headers: {
                       'Authorization': `${sessionStorage.getItem('token')}`,
                       'Content-Type': 'application/json'

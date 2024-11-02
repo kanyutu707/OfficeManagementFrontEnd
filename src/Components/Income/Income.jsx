@@ -6,13 +6,13 @@ import FinancialForm from '../FinancialForm/FinancialForm'
 
 const Income = () => {
     const [financials, setFinancials] = useState([]);
-
+    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:8080/smartEmployer/financials/get_all", {
+                const response = await fetch(`${BASE_URL}/finance/`, {
                     headers: {
-                        'Authorization': `Bearer ${sessionStorage.getItem('token')}`,
+                        'Authorization': `${sessionStorage.getItem('token')}`,
                         'Content-Type': 'application/json'
                     }
                 });
@@ -20,7 +20,10 @@ const Income = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                setFinancials(data);
+                console.log(data)
+                const companyId=parseInt(sessionStorage.getItem('companyId'));
+                const filtereddata=data.filter(singledata=>(singledata.type.data==1 && singledata.company_id===companyId));
+                setFinancials(filtereddata);
             } catch (error) {
                 console.error("There was a problem fetching the data:", error);
             }
