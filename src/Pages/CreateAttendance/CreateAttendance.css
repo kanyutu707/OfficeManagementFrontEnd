@@ -1,0 +1,16 @@
+.createattendancecontainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+}
+.createattendancecontainer svg{
+    width: 50%;
+    height: 50%;
+}
+.createattendancecontainer span{
+    font-size: 25px;
+    font-weight: 700;
+}

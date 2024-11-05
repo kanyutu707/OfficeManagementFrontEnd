@@ -1,0 +1,42 @@
+.pastattendancecontainer{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.pastattendancecontainer table{
+    width: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+}
+.pastattendancecontainer table caption{
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+}
+.pastattendancecontainer table caption input{
+    width: 500px;
+    height: 50px;
+}
+.pastattendancecontainer table thead{
+    margin-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+.pastattendancecontainer table tbody tr td{
+    margin-bottom: 10px;
+    border-bottom: 1px solid whitesmoke;
+
+}
+.pastattendancecontainer table thead, .pastattendancecontainer table tbody tr{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 14px;
+    
+}
+.pastattendancecontainer table thead th, .pastattendancecontainer table tbody tr td{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+
+}

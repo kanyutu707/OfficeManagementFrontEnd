@@ -1,0 +1,22 @@
+.leavecontainer{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 24px;
+    padding: 30px;
+}
+.leavecontainer .buttonsection{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 17px;
+}
+.leavecontainer .buttonsection a{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+}
+.leavecontainer section{
+    background-color: white;
+    height: 75vh;
+}
