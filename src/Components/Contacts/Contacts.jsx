@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./Contacts.css"
 
+const SESSION_STORAGE_UPDATE='SESSION_STORAGE_UPDATE';
 const Contacts = () => {
     const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const [employees, setEmployees]=useState([]);
@@ -31,12 +32,20 @@ const Contacts = () => {
         };
         fetchData();
     }, []);
+
+    const getUserDetails=(firstName, lastName, userId)=>{
+        sessionStorage.setItem("fName", firstName);
+        sessionStorage.setItem("lName", lastName);
+        sessionStorage.setItem("selectedUser", userId)
+
+        window.dispatchEvent(new Event(SESSION_STORAGE_UPDATE));
+    }
   return (
     <div className='ContactsContainer'>
         {employees.map((employee)=>(
-             <span className="contactContainer">
+             <span className="contactContainer" key={employee.id} onClick={()=>getUserDetails(employee.firstName, employee.lastName, employee.id)}>
              <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" alt="" />
-             <h3>{employee.firstName}</h3>
+             <h3>{employee.firstName  + " " + employee.lastName}</h3>
          </span>
         ))}
        

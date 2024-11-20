@@ -7,7 +7,9 @@
     padding: 7px;
 }
 .Typing_View_Container .Messages_View{
-    height: calc(100% - 40px);
+    height: calc(100% - 70px);
+    overflow-y: scroll;
+    padding: 5px;
 }
 .Typing_View_Container .typing_section{
     height: 40px;
@@ -30,4 +32,37 @@
     color: white;
     
 }
-
+.Typing_View_Container .Messages_View .recipient{
+    background-color: springgreen;
+    margin-top: 10px;
+    width: 48%;
+    padding: 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    
+}
+.Typing_View_Container .Messages_View  .sender{
+    background-color: lightblue;
+    margin-top: 10px;
+    width: 48%;
+    padding: 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+    
+}
+.Typing_View_Container .Messages_View  .sender .message-bubble, .Typing_View_Container .Messages_View  .recipient .message-bubble{
+    font-size: 19px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.Typing_View_Container .Messages_View  .sender .message-bubble .message-time, .Typing_View_Container .Messages_View  .recipient .message-bubble .message-time{
+    font-size: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2px;
+}

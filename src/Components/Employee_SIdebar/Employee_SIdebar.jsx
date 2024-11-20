@@ -14,7 +14,7 @@ const Employee_SIdebar = () => {
         <Link to="/Employee/"><RiDashboardHorizontalLine /> DASHBOARD</Link>
         <Link to="/Employee/Tasks"><FaTasks />TASKS</Link>
         <Link to="/Employee/Events"><MdEventSeat /> EVENTS</Link>
-        <Link to='/Employee/attendance'><FaClock/> ATTENDANCE</Link>
+        
         <Link to='/Employee/leave'><MdRequestPage/> LEAVE</Link>
       </span>
     </div>

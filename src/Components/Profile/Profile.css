@@ -1,0 +1,19 @@
+.profilecontainer{
+    width: 100%;
+    background-color: whitesmoke;
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.profilecontainer img{
+    width: 50px;
+    height: 100%;
+    border-radius: 100%;
+    margin-right: 20px;
+
+}
+.profilecontainer span{
+    font-weight: 550;
+    font-size: 20px;
+}
