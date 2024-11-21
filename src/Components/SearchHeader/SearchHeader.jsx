@@ -11,11 +11,7 @@ const SearchHeader = () => {
         <span className="searchContact">
             <input type="search" placeholder='search contact ...' />
         </span>
-        <span className="searchButtonGroup">
-            <Link to="/Admin/chats/"><FiMessageSquare /> ALL</Link>
-            <Link to="/Admin/chats/read"><CiRead /> READ</Link>
-            <Link to="/Admin/chats/unread"><CiUnread /> UNREAD</Link>
-        </span>
+       
     </div>
   )
 }

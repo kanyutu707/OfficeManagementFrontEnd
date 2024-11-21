@@ -30,3 +30,15 @@
     font-weight: 520;
     font-family: Arial, Helvetica, sans-serif;
 }
+.unreadmessages{
+    background-color: springgreen;
+    padding: 5px;
+    height: 17px;
+    width: 17px;
+    margin-top: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    font-size: 14px;
+}

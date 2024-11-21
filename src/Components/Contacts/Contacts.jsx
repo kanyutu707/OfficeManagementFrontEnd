@@ -46,6 +46,7 @@ const Contacts = () => {
              <span className="contactContainer" key={employee.id} onClick={()=>getUserDetails(employee.firstName, employee.lastName, employee.id)}>
              <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" alt="" />
              <h3>{employee.firstName  + " " + employee.lastName}</h3>
+             <span className="unreadmessages">5</span>
          </span>
         ))}
        
