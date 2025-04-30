@@ -1,42 +1,107 @@
-.createleavecontainer{
+.create-leave-container {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.createleavecontainer form{
-    background-color: white;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 20px;
-    width: 50%;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 1px 5px 5px 7px rgb(251, 251, 251);
-}
-.createleavecontainer form .input_group{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 15px;
-}
-.createleavecontainer form header{
+    padding: 20px;
+    background-color: #0f172a;
+  }
+  
+  .create-leave-container form {
+    background-color: #1e293b;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid white;
+    flex-direction: column;
+    gap: 24px;
     width: 100%;
-    font-size: 24px;
-    font-weight: 580;
-}
-.createleavecontainer form .input_group input{
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid #334155;
+  }
+  
+  .create-leave-container form header {
+    text-align: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #334155;
+    color: #e2e8f0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  
+  .create-leave-container .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .create-leave-container .input-group label {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .create-leave-container .input-group input {
     height: 50px;
-}
-.createleavecontainer form button{
+    padding: 0 16px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .create-leave-container .input-group input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  }
+  
+  .create-leave-container button {
     height: 54px;
     border: none;
-    background-color: black;
-    border-radius: 5px;
+    background-color: #4f46e5;
+    border-radius: 6px;
     color: white;
-    font-size: 17px;
-}
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .create-leave-container button:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+  }
+  
+  .create-leave-container button:disabled {
+    background-color: #4f46e5;
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .error-message {
+    color: #ef4444;
+    font-size: 0.9rem;
+    margin-top: -12px;
+    text-align: center;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .create-leave-container form {
+      width: 100%;
+      padding: 20px;
+    }
+  }

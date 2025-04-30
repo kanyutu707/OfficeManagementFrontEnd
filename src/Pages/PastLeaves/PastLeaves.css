@@ -1,0 +1,146 @@
+.past-leaves-container {
+    background-color: #1e293b;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #334155;
+  }
+  
+  .search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111827;
+    border-bottom: 1px solid #334155;
+  }
+  
+  .search-header h2 {
+    color: #e2e8f0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .search-wrapper {
+    position: relative;
+    width: 350px;
+  }
+  
+  .search-wrapper input {
+    width: 100%;
+    height: 40px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 0 15px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .search-wrapper input::placeholder {
+    color: #64748b;
+  }
+  
+  .search-wrapper input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  table thead {
+    background-color: #111827;
+  }
+  
+  table th {
+    padding: 16px 20px;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #334155;
+  }
+  
+  table tbody tr {
+    transition: background-color 0.2s;
+  }
+  
+  table tbody tr:hover {
+    background-color: rgba(79, 70, 229, 0.05);
+  }
+  
+  table td {
+    padding: 16px 20px;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #334155;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .status-badge.approved {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+  }
+  
+  .status-badge.rejected {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+  }
+  
+  .status-badge.pending, .status-badge.applied {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+  }
+  
+  .loading-message,
+  .error-message,
+  .no-leaves-message {
+    padding: 40px;
+    text-align: center;
+    color: #94a3b8;
+  }
+  
+  .error-message {
+    color: #ef4444;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .search-header {
+      flex-direction: column;
+      gap: 15px;
+      align-items: stretch;
+    }
+    
+    .search-wrapper {
+      width: 100%;
+    }
+    
+    table th,
+    table td {
+      padding: 12px 10px;
+    }
+  }

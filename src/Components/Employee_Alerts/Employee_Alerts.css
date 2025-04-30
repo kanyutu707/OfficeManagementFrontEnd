@@ -1,26 +1,100 @@
-.Employee_Notifications_Container{
+.Employee_Notifications_Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap:10px;
+    grid-gap: 20px;
     padding: 10px;
-    margin-top: 10px;
-}
-.Employee_Notifications_Message{
-    width: 107%;
-    background-color: white;
-    padding: 20px;
-    height: 250px;
-    border-radius: 7px;
-}
-.Employee_Notifications_Message h3, .Employee_Notifications_Message h2, .Employee_Notifications_Event h3, .Employee_Notifications_Event h3{
-    font-weight: 500;
     margin-top: 20px;
-}
-.Employee_Notifications_Event{
-    width: 84%;
-    background-color: white;
-    padding: 4px;
-    height: 250px;
-    margin: auto;
-    border-radius: 7px;
-}
+  }
+  
+  .Employee_Notifications_Message,
+  .Employee_Notifications_Event {
+    background-color: #1e293b;
+    padding: 24px;
+    height: 280px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: all 0.3s ease;
+  }
+  
+  .Employee_Notifications_Message:hover,
+  .Employee_Notifications_Event:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-color: #4f46e5;
+  }
+  
+  .Employee_Notifications_Message h3:first-child {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+  
+  .Employee_Notifications_Message h2,
+  #eventHeader {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+  }
+  
+  .Employee_Notifications_Message h3:last-child,
+  .Employee_Notifications_Event h3:not(#eventHeader) {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top: 0;
+  }
+  
+  /* Scrollbar styling */
+  .Employee_Notifications_Message::-webkit-scrollbar,
+  .Employee_Notifications_Event::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .Employee_Notifications_Message::-webkit-scrollbar-track,
+  .Employee_Notifications_Event::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 10px;
+  }
+  
+  .Employee_Notifications_Message::-webkit-scrollbar-thumb,
+  .Employee_Notifications_Event::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 10px;
+  }
+  
+  .Employee_Notifications_Message::-webkit-scrollbar-thumb:hover,
+  .Employee_Notifications_Event::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+  
+  /* Fix for width issues in original CSS */
+  .Employee_Notifications_Message {
+    width: 100%;
+  }
+  
+  .Employee_Notifications_Event {
+    width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 992px) {
+    .Employee_Notifications_Container {
+      grid-template-columns: 1fr;
+    }
+    
+    .Employee_Notifications_Message,
+    .Employee_Notifications_Event {
+      width: 100%;
+      height: auto;
+      min-height: 200px;
+    }
+  }

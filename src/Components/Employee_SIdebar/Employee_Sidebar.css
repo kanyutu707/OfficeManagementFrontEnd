@@ -1,42 +1,169 @@
-.navigations{
-    display: flex;
-    flex-direction: column;
-    height: 94vh;
-}
-.navigations a{
-
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    padding: 20px;
-    font-size: 19px;
-    margin-top:30px;
-    font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
-    border-bottom: 1px solid whitesmoke;
-
-  
-}
-.navigations a svg{
-    font-size: 30px;
-    margin-right: 5px;
-    margin-top: -7px;
-}
-.EmployeeSideBar{
+.EmployeeSideBar {
     width: 220px;
-    background-color: white;
-   }
+    background-color: #111827;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
   
-.EmployeeSideBar header{
+  .sidebar-collapsed .EmployeeSideBar {
+    width: 70px;
+  }
+  
+  .EmployeeSideBar header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
-    border-bottom: 1px solid lightgray;
-    
-}
-.EmployeeSideBar .navigations a{
+    padding: 24px 0;
+    margin-top: 0;
+    border-bottom: 1px solid #334155;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  
+  .navigations {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    padding: 10px 0;
+  }
+  
+  .navigations a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid #1e293b;
+    color: #94a3b8;
     text-decoration: none;
-    color: black;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .navigations a svg {
+    font-size: 20px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .navigations a:hover {
+    background-color: #1e293b;
+    color: #ffffff;
+    border-left: 3px solid #4f46e5;
+  }
+  
+  .navigations a:hover svg {
+    color: #4f46e5;
+  }
+  
+  .navigations a.active {
+    background-color: #1e293b;
+    color: #ffffff;
+    border-left: 3px solid #4f46e5;
+  }
+  
+  .navigations a.active svg {
+    color: #4f46e5;
+  }
+  
+  .sidebar-collapsed .navigations a {
+    padding: 15px;
+    justify-content: center;
+  }
+  
+  .sidebar-collapsed .navigations a svg {
+    margin-right: 0;
+    font-size: 22px;
+  }
+  
+  .sidebar-collapsed .navigations a span {
+    display: none;
+  }
+  
+  /* Scrollbar styling */
+  .EmployeeSideBar::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .EmployeeSideBar::-webkit-scrollbar-track {
+    background: #111827;
+  }
+  
+  .EmployeeSideBar::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+  }
+  
+  .EmployeeSideBar::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+  
+  @media (max-width: 768px) {
+    .EmployeeSideBar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navigations {
+      height: auto;
+      padding-bottom: 10px;
+    }
+    
+    .navigations a {
+      margin-top: 5px;
+    }
+  }
+  /* Add this to your Employee_Sidebar.css file */
 
-}
+.EmployeeSideBar header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+    margin-top: 0;
+    border-bottom: 1px solid #334155;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  
+  .toggle-btn {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-btn:hover {
+    color: #4f46e5;
+  }
+  
+  .sidebar-collapsed .toggle-btn {
+    transform: rotate(180deg);
+  }

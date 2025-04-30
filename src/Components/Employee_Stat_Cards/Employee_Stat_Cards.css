@@ -1,20 +1,78 @@
-.EmployeeTopDashCards{
+.EmployeeTopDashCards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap:10px;
+    grid-gap: 16px;
     padding: 10px;
     margin-top: 10px;
-}
-.EmployeeTopDashCard{
-    height: 80px;
-    border-radius: 7px;
+  }
+  
+  .EmployeeTopDashCard {
+    height: 100px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    align-items: center;
+    background-color: #1e293b;
     padding: 20px;
-}
-.custom_icon{
-    height: 40px;
-    width: 35px;
-
-}
+    transition: all 0.3s ease;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .EmployeeTopDashCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border-color: #4f46e5;
+  }
+  
+  .EmployeeTopDashDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .EmployeeTopDashDetails h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+  }
+  
+  .EmployeeTopDashDetails h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .EmployeeTopDashIcons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f172a;
+    border-radius: 12px;
+    padding: 12px;
+    height: 60px;
+    width: 60px;
+  }
+  
+  .custom_icon {
+    height: 30px;
+    width: 30px;
+    color: #4f46e5;
+  }
+  
+  @media (max-width: 1200px) {
+    .EmployeeTopDashCards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .EmployeeTopDashCards {
+      grid-template-columns: 1fr;
+    }
+    
+    .EmployeeTopDashCard {
+      height: 90px;
+    }
+  }
