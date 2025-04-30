@@ -1,23 +1,66 @@
-.Admin_Notifications_Container{
+.Admin_Notifications_Container {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-}
-.Admin_Notifications_Message{
-    width: 57%;
-    background-color: white;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .Admin_Notifications_Message,
+  .Admin_Notifications_Event {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    color: #e2e8f0;
     padding: 20px;
-    height: 250px;
-    border-radius: 7px;
-}
-.Admin_Notifications_Message h3, .Admin_Notifications_Message h2, .Admin_Notifications_Event h3, .Admin_Notifications_Event h3{
+    border-radius: 12px;
+    height: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .Admin_Notifications_Message:hover,
+  .Admin_Notifications_Event:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .Admin_Notifications_Message h2,
+  .Admin_Notifications_Message h3,
+  .Admin_Notifications_Event h3 {
     font-weight: 500;
-    margin-top: 20px;
-}
-.Admin_Notifications_Event{
-    width: 42%;
-    background-color: white;
-    padding: 4px;
-    height: 250px;
-    border-radius: 7px;
-}
+    margin-top: 15px;
+    line-height: 1.5;
+  }
+  
+  .Admin_Notifications_Message h2 {
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+  
+  .Admin_Notifications_Message h3,
+  .Admin_Notifications_Event h3 {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+  }
+  
+  #eventHeader {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #8E54E9;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .Admin_Notifications_Container {
+      flex-direction: column;
+    }
+  
+    .Admin_Notifications_Message,
+    .Admin_Notifications_Event {
+      width: 100%;
+    }
+  }
+  

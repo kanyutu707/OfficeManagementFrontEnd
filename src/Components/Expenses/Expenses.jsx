@@ -39,7 +39,7 @@ const Expenses = ({close}) => {
     }
     return (
         <div className='financialFormContainer'>
-            <button onClick={close}>
+            <button onClick={close} className='closeButton'>
                 <IoCloseCircleOutline />
 
             </button>
@@ -48,7 +48,7 @@ const Expenses = ({close}) => {
                     <label htmlFor="">SOURCE</label>
                     <input type="text" placeholder='SOURCE OF THE MONEY' onChange={handleChange} name='source' value={formData.source} />
                 </section>
-                <section className='form_group'>
+                <section className='formGroup'>
                     <label htmlFor="">DESCRIPTION</label>
                     <textarea name="description" id="" rows="10" placeholder='DESCRIPTION OF THE SOURCE' onChange={handleChange} value={formData.description} ></textarea>
                 </section>

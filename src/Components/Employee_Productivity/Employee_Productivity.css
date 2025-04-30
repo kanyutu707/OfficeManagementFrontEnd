@@ -1,20 +1,80 @@
-.Employee_Productivity_Container{
+.Employee_Productivity_Container {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-}
-.Employee_Productivity_Container .Employee_Productivity_Employee{
-    width: 44%;
-    background-color: white;
-    padding: 10px;
-
-}
-
-.Employee_Productivity_Container .Employee_Productivity_Productivity{
-    width: 55%;
-    background-color: white;
-}
-.keyMap{
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.1); /* Just to see if the container is rendering */
+  }
+  
+  .Employee_Productivity_Employee,
+  .Employee_Productivity_Productivity {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 20px;
+    color: #e2e8f0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .Employee_Productivity_Employee:hover,
+  .Employee_Productivity_Productivity:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .keyMap {
     display: flex;
     justify-content: space-between;
-}
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+  }
+  
+  #keyMap {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Make sure the charts have space to render properly */
+  .Employee_Productivity_Container .Employee_Productivity_Employee .BarChart,
+  .Employee_Productivity_Container .Employee_Productivity_Productivity .LineChart {
+    width: 100%;  /* Fill the width of the container */
+    height: 100%; /* Fill the height of the container */
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .Employee_Productivity_Container {
+      flex-direction: column;
+    }
+  
+    .Employee_Productivity_Employee,
+    .Employee_Productivity_Productivity {
+      width: 100%;
+    }
+  
+    .Employee_Productivity_Employee .BarChart,
+    .Employee_Productivity_Productivity .LineChart {
+      height: 250px; /* Adjust height for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .Employee_Productivity_Container .Employee_Productivity_Employee,
+    .Employee_Productivity_Container .Employee_Productivity_Productivity {
+      padding: 15px;
+    }
+  
+    .keyMap {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

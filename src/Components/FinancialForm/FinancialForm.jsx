@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import './FinancialForm.css'
 import { IoCloseCircleOutline } from "react-icons/io5";
-
+import './FinancialForm.css';
 
 const FinancialForm = ({ close }) => {
-    const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
-    const[formData, setFormData]=useState({
-        "source":"",
-        "description":"",
-        "amount":0,
-        "type":true,
-        "company_id":parseInt(sessionStorage.getItem("companyId"))
-    })
+    const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
+    const [formData, setFormData] = useState({
+        "source": "",
+        "description": "",
+        "amount": 0,
+        "type": true,
+        "company_id": parseInt(sessionStorage.getItem("companyId"))
+    });
+    
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -26,41 +27,64 @@ const FinancialForm = ({ close }) => {
                 },
                 credentials: 'include',
                 body: JSON.stringify(formData),
-            })
+            });
+            
             if (!response.ok) {
-                console.log(response)
-                throw new Error('Network response was not ok')
+                console.log(response);
+                throw new Error('Network response was not ok');
             }
+            
             const data = await response.json();
-           alert("Data submitted successfully");
-           window.location.href=window.location.href;
+            alert("Data submitted successfully");
+            window.location.href = window.location.href;
         }
         catch (error) {
-            console.error("There was a problem with your post operation", error)
+            console.error("There was a problem with your post operation", error);
         }
-    }
+    };
+    
     return (
-        <div className='financialFormContainer'>
-                <button onClick={close}>
+        <div className="financialFormContainer">
+            <button className="closeButton" onClick={close}>
                 <IoCloseCircleOutline />
-
-                </button>
-            <form className='content' onSubmit={handleSubmit}>
-                <section className="form_group">
-                    <label htmlFor="">SOURCE</label>
-                    <input type="text"  placeholder='SOURCE OF THE MONEY' onChange={handleChange} name='source' value={formData.source}/>
+            </button>
+            
+            <div className="formContent">
+                <section className="formGroup">
+                    <label>SOURCE</label>
+                    <input 
+                        type="text" 
+                        placeholder="SOURCE OF THE MONEY" 
+                        onChange={handleChange} 
+                        name="source" 
+                        value={formData.source}
+                    />
                 </section>
-                <section className='form_group'>
-                    <label htmlFor="">DESCRIPTION</label>
-                    <textarea name="description" id="" rows="10" placeholder='DESCRIPTION OF THE SOURCE' onChange={handleChange}  value={formData.description} ></textarea>
+                
+                <section className="formGroup">
+                    <label>DESCRIPTION</label>
+                    <textarea 
+                        name="description" 
+                        rows="10" 
+                        placeholder="DESCRIPTION OF THE SOURCE" 
+                        onChange={handleChange} 
+                        value={formData.description}
+                    ></textarea>
                 </section>
-                <section className="form_group">
-                    <label htmlFor="">AMOUNT</label>
-                    <input type="number" placeholder='AMOUNT' onChange={handleChange} name='amount' value={formData.amount} />
+                
+                <section className="formGroup">
+                    <label>AMOUNT</label>
+                    <input 
+                        type="number" 
+                        placeholder="AMOUNT" 
+                        onChange={handleChange} 
+                        name="amount" 
+                        value={formData.amount}
+                    />
                 </section>
-                <button id='submitButton'>SUBMIT</button>
-            </form>
-         
+                
+                <button id="submitButton" onClick={handleSubmit}>SUBMIT</button>
+            </div>
         </div>
     );
 };

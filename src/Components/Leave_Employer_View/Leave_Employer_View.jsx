@@ -4,6 +4,7 @@ import './Leave_Employer_View.css'
 const Leave_Employer_View = () => {
     const BASE_URL=import.meta.env.VITE_APP_BASE_URL;
     const [leaves, setLeaveData]=useState([]);
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -27,40 +28,45 @@ const Leave_Employer_View = () => {
 
         fetchData();
     }, []);
-  return (
-    <div className='leaveEmployerContainer'>
-          <span className="leaveEmployerBar">
-                <input type="search" placeholder='search' />
+
+    return (
+        <div className='leaveEmployerContainer'>
+            <span className="leaveEmployerBar">
+                <input type="search" placeholder='Search by employee name or number' />
             </span>
-        <table>
-            <thead>
-                <th>#</th>
-                <th>FULL NAME</th>
-                <th>EMPLOYEE NUMBER</th>
-                <th>APPLICATION DATE</th>
-                <th>START DATE</th>
-                <th>END DATE</th>
-                <th>ACTION</th>
-            </thead>
-            <tbody>
-                {leaves.map((leave)=>(
-                    <tr key={leave.id}>
-                    <td>1</td>
-                    <td>JOHN OLOO</td>
-                    <td>332VVW</td>
-                    <td>{leave.startDate}</td>
-                    <td>{leave.endDate}</td>
-                    <td>15/4/2020</td>
-                    <td>
-                        ACCEPT|REJECT
-                    </td>
-                </tr>
-                ))}
-                
-            </tbody>
-        </table>
-    </div>
-  )
+            <div className="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>FULL NAME</th>
+                            <th>EMPLOYEE NUMBER</th>
+                            <th>APPLICATION DATE</th>
+                            <th>START DATE</th>
+                            <th>END DATE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {leaves.map((leave, index)=>(
+                            <tr key={leave.id}>
+                                <td>{index + 1}</td>
+                                <td>JOHN OLOO</td>
+                                <td>332VVW</td>
+                                <td>{leave.startDate}</td>
+                                <td>{leave.endDate}</td>
+                                <td>15/4/2020</td>
+                                <td className="action-buttons">
+                                    <button className="accept-btn">ACCEPT</button>
+                                    <button className="reject-btn">REJECT</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    )
 }
 
 export default Leave_Employer_View

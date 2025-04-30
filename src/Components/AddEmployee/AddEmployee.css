@@ -1,70 +1,137 @@
-.addEmployeeContainer{
+.addEmployeeContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(15, 23, 42, 0.85);
+    z-index: 100;
 }
-.addEmployeeContainer form{
-    margin-top: 20vh;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 650px;
-    height: 648px;
-    padding:20px;
-    border-radius: 5px;
-    box-shadow: 1px 2px 1px 2px whitesmoke;
-    border: 1px solid black;
-   
-}
-.addEmployeeContainer form header{
-    
-    font-size: 24px;
-    text-decoration: underline;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.addEmployeeContainer form header button{
-    height: 10px;
-    width: 10px;
-    background-color: white;
-    margin: 0;
 
-}
-.addEmployeeContainer form header button svg{
-    background-color: black;
-}
-.addEmployeeContainer form  .form_group{
+.addEmployeeContainer form {
     display: flex;
     flex-direction: column;
+    background-color: #1e293b;
+    width: 100%;
+    max-width: 600px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 1px solid #334155;
+    color: #e2e8f0;
 }
-.addEmployeeContainer form  .form_group input{
-    height: 54px;
-    margin-top: 10px;
+
+.addEmployeeContainer form header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #334155;
+    text-decoration: none;
 }
-.addEmployeeContainer form  .form_group  label{
-    font-size: 24px;
-    margin-top: 30px;
+
+.addEmployeeContainer form header h3 {
+    color: #e2e8f0;
+    margin: 0;
 }
-.addEmployeeContainer form  button{
-    width: 140px;
-    height: 45px;
-    margin: auto;
-    margin-top: 30px;
-    background-color: black;
+
+.addEmployeeContainer form header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.addEmployeeContainer form header button:hover {
+    color: #e2e8f0;
+}
+
+.addEmployeeContainer form header button svg {
+    font-size: 1.5rem;
+    background-color: transparent;
+}
+
+.addEmployeeContainer form .form_group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+}
+
+.addEmployeeContainer form .form_group input {
+    height: auto;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    background-color: #273548;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.2s;
+}
+
+.addEmployeeContainer form .form_group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.addEmployeeContainer form .form_group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #94a3b8;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+.addEmployeeContainer form button[type="submit"] {
+    width: 100%;
+    height: auto;
+    padding: 0.75rem;
+    margin: 1.5rem 0 0;
+    background-color: #3b82f6;
     border: none;
     color: white;
-    font-size: 21px;
-    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
 
+.addEmployeeContainer form button[type="submit"]:hover {
+    background-color: #2563eb;
 }
-.addEmployeeContainer form  .name_group{
+
+.addEmployeeContainer form .name_group {
     display: flex;
-}
-.addEmployeeContainer form  .name_group .form_group{
-    margin-left: 20px;
+    gap: 1rem;
     width: 100%;
 }
-.addEmployeeContainer form  .name_group .form_group:first-child{
-    margin-left: 0px;
+
+.addEmployeeContainer form .name_group .form_group {
+    width: 100%;
+    margin-left: 0;
+}
+
+@media screen and (max-width: 640px) {
+    .addEmployeeContainer form {
+        max-width: 90%;
+        padding: 1rem;
+    }
+    
+    .addEmployeeContainer form .name_group {
+        flex-direction: column;
+        gap: 0;
+    }
 }

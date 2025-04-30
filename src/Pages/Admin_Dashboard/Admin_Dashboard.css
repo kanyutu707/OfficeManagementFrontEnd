@@ -1,7 +1,15 @@
-.admin_dashboard_container{
+.admin_container {
     display: flex;
-    justify-content: space-between;
-}
-.admin_dashboard_right_side{
-    width: calc(100% - 220px);
-}
+    min-height: 100vh;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .main_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  

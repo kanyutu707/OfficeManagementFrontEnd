@@ -9,7 +9,7 @@ const Task_Form_Add = () => {
         description: "",
         assigned_to: "",
         created:new Date().toISOString().slice(0, 19).replace('T', ' '),
-        deadline: "",
+        deadline: new Date().toISOString().slice(0, 16),
         company_id:parseInt(sessionStorage.getItem("companyId")),
         createdby:parseInt(sessionStorage.getItem('loggedIn'))
     });
@@ -40,9 +40,15 @@ const Task_Form_Add = () => {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const submissionData = { ...formData };
+
+        if (submissionData.deadline) {
+            submissionData.deadline = submissionData.deadline.replace('T', ' ');
+        }
+        
         try {
             const response = await fetch(`${BASE_URL}/task`, {
                 method: 'POST',
@@ -51,15 +57,17 @@ const Task_Form_Add = () => {
                     'Content-Type': 'application/json'
                 },
                 credentials: 'include',
-                body: JSON.stringify(formData),
+                body: JSON.stringify(submissionData),
             });
+            
             if (!response.ok) {
                 throw new Error('Failed to add task');
             }
+            
             const data = await response.json();
             console.log(data);
             alert("Data submitted successfully");
-            window.location.href=window.location.href;
+            window.location.href = window.location.href;
         } catch (error) {
             console.error("Error adding task: ", error);
             alert("Failed to add task. Please try again.");

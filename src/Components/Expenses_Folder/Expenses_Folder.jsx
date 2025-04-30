@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './Expenses_Folder.css';
 import Expenses from '../Expenses/Expenses';
 import Popup from 'reactjs-popup'
 
@@ -37,8 +36,8 @@ const Expenses_Folder = () => {
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
     return (
-        <div className='All_Expenses'>
-            <span className="all_expenses_bar">
+        <div className='All_Assets'>
+            <span className="all_assets_bar">
                 <input type="search" placeholder='search' />
                 
                 <button onClick={openModal}>ADD</button>

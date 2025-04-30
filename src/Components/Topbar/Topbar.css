@@ -1,50 +1,147 @@
-.topBarContainer{
+.topBarContainer {
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 70px;
-    background-color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+    backdrop-filter: blur(12px); /* Frosted glass effect */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     align-items: center;
-    padding-left: 5px;
-    
-}
-.topBarWriting h5{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    color: #e2e8f0;
+  }
+  
+  .topBarWriting h5 {
     display: flex;
-    margin-right: 5px;
-    font-size: 20px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-.topBarWriting h5 h4{
+    margin-right: 10px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e2e8f0;
+  }
+  
+  .topBarWriting h5 h4 {
     margin-left: 7px;
-    font-size: 25px;
-}
-.topBarControls{
+    font-size: 22px;
+    font-weight: 600;
+    color: #e2e8f0;
+  }
+  
+  .topBarWriting h3 {
+    font-size: 28px;
+    color: #e2e8f0;
+  }
+  
+  .topBarControls {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 50%;
-    
-}
-.topBarPerson{
+  }
+  
+  .topBarSearch input {
+    height: 35px;
+    width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #e2e8f0;
+    padding: 0 10px;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    transition: width 0.3s ease;
+  }
+  
+  .topBarSearch input:focus {
+    outline: none;
+    width: 300px;
+  }
+  
+  .topBarPerson {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.topBarSearch input{
-    height: 40px;
-    width: 200px;
-    border: 1px solid black;
-    border-radius: 4px;
-    background-color: white;
-    color:black;
-    padding: 2px;
-    font-size: 19px;
-    font-family: serif;
-
-}
-.topBarPerson svg, .topBarControls svg{
-    height: 40px;
-    width: 20px;
-    margin-right: 15px;
-    
-}
+    cursor: pointer;
+  }
+  
+  .topBarPerson svg {
+    height: 35px;
+    width: 35px;
+    color: #e2e8f0;
+    margin-right: 10px;
+  }
+  
+  .topBarPerson h3 {
+    font-size: 18px;
+    color: #e2e8f0;
+    font-weight: 500;
+  }
+  
+  .topBarControls svg {
+    height: 35px;
+    width: 35px;
+    color: #e2e8f0;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the icons */
+  .topBarControls svg:hover, .topBarPerson:hover {
+    color: #38bdf8;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .topBarContainer {
+      padding-left: 10px;
+      padding-right: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .topBarWriting {
+      margin-bottom: 10px;
+    }
+  
+    .topBarControls {
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+  
+    .topBarSearch input {
+      width: 200px;
+    }
+  
+    .topBarPerson svg, .topBarControls svg {
+      height: 30px;
+      width: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .topBarContainer {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  
+    .topBarWriting h5 {
+      font-size: 16px;
+    }
+  
+    .topBarWriting h5 h4 {
+      font-size: 18px;
+    }
+  
+    .topBarControls svg {
+      height: 25px;
+      width: 25px;
+    }
+  
+    .topBarSearch input {
+      width: 150px;
+    }
+  }
+  

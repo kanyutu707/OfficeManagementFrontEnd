@@ -1,5 +1,43 @@
-.AllChatsContainer{
+.AllChatsContainer {
     display: flex;
-    height: 700px;
-    padding: 10px;
-}
+    flex: 1;
+    height: 100%;
+    background-color: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    gap: 1.5rem;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: #e2e8f0;
+  }
+  
+  /* Adjust children layout if needed */
+  .AllChatsContainer > * {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #0f172a;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #334155;
+  }
+  
+  /* Optional: scrollbar styling */
+  .AllChatsContainer::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .AllChatsContainer::-webkit-scrollbar-thumb {
+    background-color: #475569;
+    border-radius: 20px;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 1024px) {
+    .AllChatsContainer {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+  

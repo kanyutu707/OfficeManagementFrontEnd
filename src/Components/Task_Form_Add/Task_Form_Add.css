@@ -1,44 +1,107 @@
-.taskFormContainer{
-    background-color: white;
+.taskFormContainer {
     width: 500px;
-}
-.taskFormContainer form{
+    height: 100%;
+    background-color: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    width: 450px;
-    margin: auto;
-    margin-top: 20%;
-    padding: 10px;
-    box-shadow: 2px 4px 2px 4px whitesmoke;
+    overflow-y: auto;
 }
-.taskFormContainer form .form_group{
+
+.taskFormContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+.taskFormContainer::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.taskFormContainer::-webkit-scrollbar-thumb {
+    background-color: #475569;
+    border-radius: 20px;
+}
+
+.taskFormContainer form {
     display: flex;
     flex-direction: column;
-}
-.taskFormContainer form .form_group label{
-    font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-.taskFormContainer form .form_group input{
-    height: 35px;
-}
-.taskFormContainer form  header{
-    font-size: 25px;
+    width: 100%;
+    max-width: 450px;
     margin: auto;
-    margin-top: 10px;
-    font-weight: 550;
-    text-decoration: underline;
+    padding: 1.5rem;
+    background-color: #273548;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.taskFormContainer form  button{
-    width: 150px;
-    margin: auto;
-    margin-top: 10px;
-    height: 40px;
-    font-size: 21px;
-    background-color: black;
+
+.taskFormContainer form .form_group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.taskFormContainer form .form_group label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.taskFormContainer form .form_group input,
+.taskFormContainer form .form_group select,
+.taskFormContainer form .form_group textarea {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 0.75rem;
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.taskFormContainer form .form_group input:focus,
+.taskFormContainer form .form_group select:focus,
+.taskFormContainer form .form_group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.taskFormContainer form header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 auto 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #334155;
+    text-align: center;
+    width: 100%;
+}
+
+.taskFormContainer form button {
+    width: 100%;
+    margin: 1rem 0 0;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: #3b82f6;
     border: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
 
+.taskFormContainer form button:hover {
+    background-color: #2563eb;
+}
+
+@media screen and (max-width: 1024px) {
+    .taskFormContainer {
+        height: auto;
+    }
 }

@@ -1,34 +1,164 @@
-.leaveEmployerContainer{
-    background-color: white;
-    margin:30px 20px 10px 20px;
-}
-.leaveEmployerContainer table{
+/* Dark Theme for Leave Employer View */
+.leaveEmployerContainer {
     width: 100%;
-    text-align: center;
-    padding: 5px;
-}
-.leaveEmployerContainer table thead{
-    height: 55px;
-    font-size: 20px;
-    background-color: rgb(250, 250, 250);
-}
-.leaveEmployerContainer table thead th{
-    font-weight: 650;
-}
-.leaveEmployerContainer table tr{
-    height: 48px;
-
-}
-.leaveEmployerContainer table tr td{
-    border-bottom: 1px solid whitesmoke;
-
-}
-.leaveEmployerBar{
+    padding: 20px;
+    color: #e2e8f0;
+  }
+  
+  /* Search Bar */
+  .leaveEmployerBar {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-}
-.leaveEmployerBar input{
-    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+  }
+  
+  .leaveEmployerBar input {
     width: 400px;
-}
+    height: 40px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #e2e8f0;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .leaveEmployerBar input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .leaveEmployerBar input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+  }
+  
+  /* Table Container */
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #e2e8f0;
+    text-align: center;
+  }
+  
+  thead {
+    height: 55px;
+    background: rgba(15, 23, 42, 0.7);
+  }
+  
+  th {
+    padding: 16px;
+    font-weight: 650;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(71, 85, 105, 0.5);
+  }
+  
+  td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+    font-size: 14px;
+    height: 48px;
+  }
+  
+  tbody tr {
+    transition: background-color 0.2s ease;
+  }
+  
+  tbody tr:hover {
+    background-color: rgba(51, 65, 85, 0.5);
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .accept-btn, .reject-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .accept-btn {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+  
+  .reject-btn {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+  
+  .accept-btn:hover {
+    background: rgba(34, 197, 94, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  .reject-btn:hover {
+    background: rgba(239, 68, 68, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .leaveEmployerContainer {
+      padding: 10px;
+    }
+    
+    .leaveEmployerBar {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .leaveEmployerBar input {
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 10px;
+      font-size: 12px;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .accept-btn, .reject-btn {
+      padding: 4px 8px;
+      font-size: 10px;
+    }
+  }
+  
+  /* Fix for empty rows */
+  tbody:empty::after {
+    content: "No leave applications found";
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: #94a3b8;
+    font-style: italic;
+  }

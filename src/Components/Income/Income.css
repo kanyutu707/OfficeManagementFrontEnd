@@ -1,46 +1,188 @@
-.All_Assets{
-    background-color: white;
-    margin:30px 20px 10px 20px;
-}
-.All_Assets table{
+/* Dark Theme for Income/All Assets */
+.All_Assets {
     width: 100%;
-    text-align: center;
-    padding: 5px;
-}
-
-.all_assets_bar{
+    padding: 20px;
+    color: #e2e8f0;
+  }
+  
+  /* Search and Add Bar */
+  .all_assets_bar {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-}
-.all_assets_bar input{
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+  
+  .all_assets_bar input {
     height: 40px;
     width: 400px;
-}
-.All_Assets table thead{
-    
-    height: 55px;
-    font-size: 20px;
-    background-color: rgb(250, 250, 250);
-    
-}
-.All_Assets table thead th{
-    font-weight: 650;
-   
-}
-.All_Assets table tr{
-    height: 48px;
-
-}
-.All_Assets table tr td{
-    border-bottom: 1px solid whitesmoke;
-
-}
-.all_assets_bar button{
-    background-color: black;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #e2e8f0;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .all_assets_bar input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .all_assets_bar input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+  }
+  
+  .all_assets_bar button {
+    background: rgba(99, 102, 241, 0.8);
     width: 140px;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 19px;
-}
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .all_assets_bar button:hover {
+    background: rgba(99, 102, 241, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Table Container */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Table Styling */
+  .All_Assets table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #e2e8f0;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  .All_Assets table thead {
+    height: 55px;
+    background: rgba(15, 23, 42, 0.7);
+    font-size: 18px;
+  }
+  
+  .All_Assets table thead th {
+    padding: 16px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(71, 85, 105, 0.5);
+  }
+  
+  .All_Assets table tr {
+    height: 48px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .All_Assets table tr:hover {
+    background-color: rgba(51, 65, 85, 0.5);
+  }
+  
+  .All_Assets table tr td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+    font-size: 16px;
+  }
+  
+  /* Amount styling */
+  .amount {
+    font-weight: 600;
+    color: #4ade80;
+  }
+  
+  /* Action Button */
+  .action-button {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .action-button:hover {
+    background: rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  /* Popup Styling */
+  .popup-content {
+    background: rgba(30, 41, 59, 0.95) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(71, 85, 105, 0.5) !important;
+    padding: 20px !important;
+    width: 90% !important;
+    max-width: 600px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* Empty state */
+  tbody:empty::after {
+    content: "No income records found";
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: #94a3b8;
+    font-style: italic;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .All_Assets {
+      padding: 10px;
+    }
+    
+    .all_assets_bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .all_assets_bar input {
+      width: 100%;
+    }
+  
+    .all_assets_bar button {
+      width: 100%;
+    }
+    
+    .All_Assets table thead th,
+    .All_Assets table tr td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .All_Assets table thead th,
+    .All_Assets table tr td {
+      padding: 8px;
+      font-size: 12px;
+    }
+    
+    .action-button {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  }

@@ -1,6 +1,224 @@
-.Admin_Tasks_Container{
+.Admin_Tasks_Container {
     display: flex;
     height: calc(100vh - 70px);
     overflow-y: hidden;
     width: 100%;
-}
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  /* Task List Container styling */
+  .Task_List_Container {
+    flex: 2;
+    background-color: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    padding: 1.5rem;
+  }
+  
+  .Task_List_Container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .Task_List_Container::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  
+  .Task_List_Container::-webkit-scrollbar-thumb {
+    background-color: #475569;
+    border-radius: 20px;
+  }
+  
+  /* Task Form Add styling */
+  .Task_Form_Add {
+    flex: 1;
+    background-color: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form elements styling */
+  input, select, textarea {
+    background-color: #273548;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 0.75rem;
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+  }
+  
+  label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+  }
+  
+  .primary-btn {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .primary-btn:hover {
+    background-color: #2563eb;
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    border: 1px solid #334155;
+    color: #94a3b8;
+  }
+  
+  .secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+  }
+  
+  /* Task item styling */
+  .task-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    background-color: #273548;
+    border-left: 4px solid #3b82f6;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-item.high-priority {
+    border-left-color: #ef4444;
+  }
+  
+  .task-item.medium-priority {
+    border-left-color: #f59e0b;
+  }
+  
+  .task-item.low-priority {
+    border-left-color: #10b981;
+  }
+  
+  .task-checkbox {
+    margin-right: 1rem;
+  }
+  
+  .task-content {
+    flex: 1;
+  }
+  
+  .task-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: #e2e8f0;
+  }
+  
+  .task-meta {
+    display: flex;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    gap: 1rem;
+  }
+  
+  .task-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .task-action-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .task-action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+  }
+  
+  /* Section headers */
+  .section-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #334155;
+  }
+  
+  /* Filter buttons */
+  .filter-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-btn {
+    background-color: #334155;
+    color: #e2e8f0;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .filter-btn.active {
+    background-color: #3b82f6;
+  }
+  
+  .filter-btn:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 1024px) {
+    .Admin_Tasks_Container {
+      flex-direction: column;
+      overflow-y: auto;
+      height: auto;
+    }
+    
+    .Task_List_Container,
+    .Task_Form_Add {
+      width: 100%;
+    }
+    
+    .Task_Form_Add {
+      margin-top: 1.5rem;
+    }
+  }

@@ -1,38 +1,185 @@
-.CompanyRegisterContainer{
-    background-color: whitesmoke;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.CompanyRegisterContainer form{
-    
-    padding:25px;
-    width: 500px;
-    height: 100px;
-    background-color: white;
-    border-radius: 3px;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
-.CompanyRegisterContainer form .form_group{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.CompanyRegisterContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #111827;
+  color: #fff;
 }
-.CompanyRegisterContainer form .form_group input{
-    width: 80%;
-    height: 100%;
-    border: 1px solid whitesmoke;
-    border-radius: 0;
+
+.CompanyRegisterContainer::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
+  z-index: 0;
 }
-.CompanyRegisterContainer form .form_group button{
-    background-color: black;
-    height: 100%;
-    width: 20%;
-    
-    border: none;
-    color: white;
-    font-size: 19px;
+
+.CompanyRegisterContainer form {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.CompanyRegisterContainer form:before {
+  content: 'REGISTER COMPANY';
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.form_group input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.form_group input:focus {
+  outline: none;
+  border-color: #4776E6;
+  box-shadow: 0 0 0 2px rgba(71, 118, 230, 0.2);
+}
+
+.form_group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.CompanyRegisterContainer form button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(71, 118, 230, 0.4);
+}
+
+.CompanyRegisterContainer form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.CompanyRegisterContainer form button:hover {
+  box-shadow: 0 8px 25px rgba(71, 118, 230, 0.6);
+  transform: translateY(-3px);
+}
+
+.CompanyRegisterContainer form button:hover::before {
+  left: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .CompanyRegisterContainer form {
+    padding: 30px;
+    max-width: 350px;
+  }
+  
+  .CompanyRegisterContainer form:before {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .CompanyRegisterContainer form {
+    padding: 25px;
+    margin: 0 15px;
+  }
+  
+  .CompanyRegisterContainer form:before {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .form_group {
+    margin-bottom: 20px;
+  }
+  
+  .form_group input {
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .CompanyRegisterContainer form button {
+    padding: 12px;
+  }
 }

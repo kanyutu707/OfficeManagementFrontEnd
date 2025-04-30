@@ -1,16 +1,87 @@
-.admin_container{
-    display: flex;
-    justify-content: space-between;
-    height: 100vh;
-    overflow-y: hidden;
-    overflow-x: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.admin_right_side{
-    width: calc(100% - 220px);
+
+.admin_container {
+  display: flex;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+  background-color: #111827; /* Dark theme base */
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
 }
-.admin_content{
-   height: 94vh;
-    overflow-y: scroll;
-    padding: 4px;
-    margin-bottom: 10px;
+
+.admin_right_side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+  transition: all 0.3s ease;
+  background-color: #1e293b; /* Slightly lighter than base */
+}
+
+/* Sidebar width handling */
+.sidebar-expanded .admin_right_side {
+  width: calc(100% - 220px);
+}
+
+.sidebar-collapsed .admin_right_side {
+  width: calc(100% - 70px);
+}
+
+/* Top content area (below Topbar) */
+.admin_content {
+  height: calc(100vh - 6vh); /* Adjust based on Topbar height */
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #0f172a; /* Deeper panel area */
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #334155;
+}
+
+/* Scrollbar customization */
+.admin_content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin_content::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+.admin_content::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+.admin_content::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar-expanded .admin_right_side,
+  .sidebar-collapsed .admin_right_side {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .admin_container {
+    flex-direction: column;
+  }
+
+  .admin_content {
+    height: auto;
+    min-height: calc(100vh - 6vh);
+    padding: 15px;
+  }
 }

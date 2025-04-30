@@ -1,44 +1,56 @@
-.ContactsContainer{
-    background-color: white;
+.ContactsContainer {
+    background-color: #0f172a;
     width: 270px;
-    border-right:1px solid whitesmoke;
+    border-right: 1px solid #334155;
     display: flex;
-    height: 100%;
-    
     flex-direction: column;
-}
-.ContactsContainer:first-child{
-    padding-top: 7px;
-    border-top: 2px solid white;
-}
-.ContactsContainer .contactContainer{
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .contactContainer {
     width: 100%;
     display: flex;
-    border-bottom: 1px solid whitesmoke;
     align-items: center;
-    padding: 10px;
-}
-.ContactsContainer .contactContainer img{
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #1e293b;
+    transition: background-color 0.2s ease;
+  }
+  
+  .contactContainer:hover {
+    background-color: #1e293b;
+  }
+  
+  .contactContainer img {
     width: 40px;
-    height:40px;
-    border-radius: 100%;
-    margin-left: 5px;
-    margin-right: 20px;
-}
-.ContactsContainer .contactContainer h3{
-    font-size: 20px;
-    font-weight: 520;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.unreadmessages{
-    background-color: springgreen;
-    padding: 5px;
-    height: 17px;
-    width: 17px;
-    margin-top: -20px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 16px;
+    border: 2px solid #334155;
+  }
+  
+  .contactContainer h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e2e8f0;
+    margin: 0;
+  }
+  
+  .unreadmessages {
+    background-color: #22c55e; /* Tailwind spring green */
+    color: #0f172a;
+    padding: 4px;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
-    font-size: 14px;
-}
+    border-radius: 50%;
+    margin-left: auto;
+  }
+  
