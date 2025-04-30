@@ -12,7 +12,7 @@ let socket;
 const initializeSocket = () => {
   try {
     if (!socket) {
-      socket = io('http://localhost:4000', {
+      socket = io('https://office-management-backend.onrender.com', {
         reconnection: true,
         reconnectionAttempts: 5,
         reconnectionDelay: 1000,
