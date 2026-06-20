@@ -3,7 +3,7 @@
 
 This document details the configuration and architecture of the frontend client for the Office Management System. Built using React, this single-page application (SPA) delivers a dynamic, high-performance user experience featuring state-driven dashboards, contextual view filtering based on user roles, and a low-latency chat interface.
 
-This repository contains the standalone client codebase and user interface elements. To function correctly, it must be paired with the active backend engine layer, database definitions, and WebSocket routing tables hosted at the **Office Management Backend Repository** ([https://github.com/kanyutu707/Office_Management_Backend](https://github.com/kanyutu707/Office_Management_Backend)).
+This repository contains the standalone client codebase and user interface elements. To function correctly, it must be paired with the active backend engine layer, database definitions, and WebSocket routing tables hosted at the **Office Management Backend Repository** ([https://github.com/alfred1001/Office_Management_Backend](https://github.com/alfred1001/Office_Management_Backend)).
 
 ---
 
@@ -54,7 +54,7 @@ The frontend client relies on a dual-channel networking setup to communicate wit
                                |
 +------------------------------v------------------------------+
 |               [BACKEND SERVER: EXPRESS.JS]                  |
-|     URL: https://github.com/kanyutu707/Office_Management_Backend  |
+|     URL: https://github.com/alfred1001/Office_Management_Backend  |
 +-------------------------------------------------------------+
 
 ```
@@ -125,7 +125,7 @@ Ensure your local environment contains the following runtime dependencies:
 
 #### 7.2 Client Installation & Execution
 
-1. Clone this frontend repository locally: `git clone https://github.com/kanyutu707/Office_Frontend.git`
+1. Clone this frontend repository locally: `git clone https://github.com/alfred1001/Office_Frontend.git`
 2. Open your terminal workspace inside the root project directory: `cd Office_Frontend`
 3. Run `npm install` to load all production packages and build-tool models.
 4. Launch the application locally using `npm start`.
@@ -133,7 +133,7 @@ Ensure your local environment contains the following runtime dependencies:
 
 #### 7.3 Attaching the Backend Services
 
-This interface requires a working backend connection to retrieve data records. Before starting this application, ensure the engine API server is active by following the runtime instructions outlined within the **Office Management Backend Repository** ([https://github.com/kanyutu707/Office_Management_Backend](https://github.com/kanyutu707/Office_Management_Backend)).
+This interface requires a working backend connection to retrieve data records. Before starting this application, ensure the engine API server is active by following the runtime instructions outlined within the **Office Management Backend Repository** ([https://github.com/alfred1001/Office_Management_Backend](https://github.com/alfred1001/Office_Management_Backend)).
 
 ---
 
