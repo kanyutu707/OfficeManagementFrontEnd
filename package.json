@@ -16,6 +16,7 @@
     "@mui/x-charts": "^7.29.1",
     "@stomp/stompjs": "^7.0.0",
     "@types/sockjs-client": "^1.5.4",
+    "@vercel/analytics": "^1.6.1",
     "dotenv": "^16.4.5",
     "frontend": "file:",
     "js-cookie": "^3.0.5",

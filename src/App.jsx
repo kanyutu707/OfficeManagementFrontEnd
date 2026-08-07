@@ -6,6 +6,7 @@ import User from './Layouts/User/User';
 import Index from './Pages/Index/Index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CompanyRegister from './Pages/CompanyRegister/CompanyRegister';
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='Admin/*' element={<Admin/>}/>
           <Route path='Employee/*' element={<User/>}/>
       </Routes>
+      <Analytics />
    </BrowserRouter>
   )
 }
